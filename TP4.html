@@ -1,0 +1,26 @@
+<button onclick="lancerQuiz()">Démarrer le Quiz</button>
+
+<script>
+const QUESTIONS = [
+    ["Quelle est la capitale de la France ?", "Paris"],
+    ["Combien font 5 + 5 ?", "10"],
+    ["Quelle est la couleur du ciel par beau temps ?", "Bleu"]
+];
+
+function lancerQuiz() {
+    let score = 0;
+
+    for (let i = 0; i < QUESTIONS.length; i++) {
+        let reponseUtilisateur = prompt(QUESTIONS[i][0]);
+
+        if (reponseUtilisateur === QUESTIONS[i][1]) {
+            alert("Réponse juste");
+            score++;
+        } else {
+            alert("Réponse fausse");
+        }
+    }
+
+    alert("Vous avez répondu correctement à " + score + " questions sur " + QUESTIONS.length);
+}
+</script>
